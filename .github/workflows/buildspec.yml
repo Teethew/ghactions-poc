@@ -22,6 +22,6 @@ jobs:
           echo "ls -l"
           ls -l
       - name: Building app
-      - run: npm run build
+        run: npm run build
       - name: Run
-      - run: npm start
+        run: npm start

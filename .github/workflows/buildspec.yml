@@ -16,12 +16,10 @@ jobs:
         with:
           node-version: '14.x'
       - name: Installing dependencies
-        run: npm install --production
-      - name: Listing files
-        run: 
-          echo "ls -l"
-          ls -l
+        run: yarn --production
+      - name: Listing files (ls -l)
+        run: ls -l
       - name: Building app
-        run: npm run build
+        run: yarn build
       - name: Run
-        run: npm start
+        run: yarn start

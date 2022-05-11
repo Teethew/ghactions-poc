@@ -1,2 +1,1 @@
-# ghactions-poc
-GitHub Actions Proof of Concept
+# GitHub Actions Proof of Concept

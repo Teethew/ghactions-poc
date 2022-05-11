@@ -1,25 +1,36 @@
 name: GitHub Actions PoC
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 jobs:
   run:
-
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Using Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
+          node-version: "14.x"
+
       - name: Installing dependencies
         run: yarn --production
+
       - name: Listing files (ls -l)
         run: ls -l
+
       - name: Building app
         run: yarn build
+
+      - name: 'With secret :'
+        shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.SUPER_SECRET }}
+        run: |
+          echo "$SUPER_SECRET"
+
       - name: Run
         run: yarn start

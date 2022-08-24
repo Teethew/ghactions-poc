@@ -20,6 +20,7 @@ jobs:
         run: cd rpm.poc && mvn clean package
   rpm:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: echo Hello World
         run: echo Hello World

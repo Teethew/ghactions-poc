@@ -22,7 +22,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: rpm.poc-artifact
-          path: rpm.poc/build/rpm/rpm.poc/RPMS/noarch/0.0.1
+          path: rpm.poc/build/rpm/rpm.poc/RPMS/noarch/rpm.poc-0.0.1.jar
   publish:
     runs-on: ubuntu-latest
     needs: build

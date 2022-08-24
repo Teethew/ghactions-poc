@@ -1,0 +1,28 @@
+name: Publish package to the Maven Central Repository
+on:
+  push:
+    branches: [java-maven-rpm]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Maven Central Repository
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'adopt'
+          server-id: ossrh
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+
+      - name: Enter directory
+        run: cd rpm.poc
+
+      - name: Maven Build
+        run: mvn clean package
+  rpm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo Hello World
+        run: echo Hello World

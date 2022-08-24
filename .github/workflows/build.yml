@@ -17,9 +17,7 @@ jobs:
           server-password: MAVEN_PASSWORD
 
       - name: Maven Build
-        run: 
-          cd rpm.poc
-          mvn clean package
+        run: cd rpm.poc && mvn clean package
   rpm:
     runs-on: ubuntu-latest
     steps:

@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>rpm.poc</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>rpm.poc</name>
     <description>Proof Of Concept for RPM Build</description>
     <packaging>jar</packaging>
@@ -27,7 +27,7 @@
                             <directory>/tmp</directory>
                             <sources>
                                 <source>
-                                    <location>target/</location>
+                                    <location>build/rpm.poc-0.0.1.jar</location>
                                 </source>
                             </sources>
                         </mapping>
